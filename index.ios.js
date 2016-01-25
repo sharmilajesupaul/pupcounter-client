@@ -12,34 +12,10 @@ import React, {
   View
 } from 'react-native';
 
+import Login from './src/components/login'
 const styles = StyleSheet.create({
   nav: {
     flex: 1
-  },
-  container: {
-    flex: 1,
-    paddingTop: 64,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'pink'
-  },
-  welcome: {
-    flex: 1,
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  }
-});
-
-
-const Main =  React.createClass({
-  render () {
-    return (<View style={styles.container}><Text style={styles.welcome}> hi </Text></View>);
   }
 });
 
@@ -49,7 +25,7 @@ class AwesomeProject extends Component {
       <NavigatorIOS
       style={styles.nav}
       initialRoute={{
-        component: Main,
+        component: Login,
         title: 'Pupcounter',
         passProps: { myProp: 'foo' }
       }}
