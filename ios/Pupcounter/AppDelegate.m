@@ -11,6 +11,28 @@
 
 #import "RCTRootView.h"
 
+//#import "FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+//
+//- (void)applicationDidBecomeActive:(UIApplication *)application {
+//  [FBSDKAppEvents activateApp];
+//}
+//
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//  [[FBSDKApplicationDelegate sharedInstance] application:application
+//                           didFinishLaunchingWithOptions:launchOptions];
+//  return YES;
+//}
+//
+//- (BOOL)application:(UIApplication *)application
+//openURL:(NSURL *)url
+//sourceApplication:(NSString *)sourceApplication
+//annotation:(id)annotation {
+//  return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                        openURL:url
+//                                              sourceApplication:sourceApplication
+//                                                     annotation:annotation];
+//}
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -42,7 +64,7 @@
 //   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"AwesomeProject"
+                                                      moduleName:@"Pupcounter"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
 

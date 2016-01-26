@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 });
 
 
-class AwesomeProject extends Component {
+class Pupcounter extends Component {
   render() {
     return (
       <NavigatorIOS
@@ -32,4 +32,4 @@ class AwesomeProject extends Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('Pupcounter', () => Pupcounter);
