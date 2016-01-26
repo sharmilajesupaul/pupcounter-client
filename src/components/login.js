@@ -10,7 +10,7 @@ import FBSDKLogin, {
 } from 'react-native-fbsdklogin';
 
 const Login = React.createClass({
-  render: function() {
+  render: () => {
     return (
       <View style={styles.container}>
         <FBSDKLoginButton
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingTop: 64,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'lightblue'
+    backgroundColor: 'white'
   },
   welcome: {
     flex: 1,
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = Login;
+export default Login;
