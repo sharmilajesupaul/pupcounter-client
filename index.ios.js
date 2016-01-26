@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
+
 import React, {
   AppRegistry,
   Component,
@@ -11,6 +12,10 @@ import React, {
   Text,
   View
 } from 'react-native';
+
+import FBSDKLogin, {
+  FBSDKLoginButton
+} from 'react-native-fbsdklogin';
 
 const styles = StyleSheet.create({
   nav: {
@@ -36,10 +41,33 @@ const styles = StyleSheet.create({
   }
 });
 
-
 const Main =  React.createClass({
   render () {
     return (<View style={styles.container}><Text style={styles.welcome}> hi </Text></View>);
+  }
+});
+
+var Login = React.createClass({
+  render: function() {
+    return (
+      <View style={styles.container}>
+        <FBSDKLoginButton
+          onLoginFinished={(error, result) => {
+            if (error) {
+              alert('Error logging in.');
+            } else {
+              if (result.isCancelled) {
+                alert('Login cancelled.');
+              } else {
+                alert('Logged in.');
+              }
+            }
+          }}
+          onLogoutFinished={() => alert('Logged out.')}
+          readPermissions={[]}
+          publishPermissions={['publish_actions']}/>
+      </View>
+    );
   }
 });
 
@@ -49,7 +77,7 @@ class AwesomeProject extends Component {
       <NavigatorIOS
       style={styles.nav}
       initialRoute={{
-        component: Main,
+        component: Login,
         title: 'Pupcounter',
         passProps: { myProp: 'foo' }
       }}
